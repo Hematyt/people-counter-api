@@ -21,7 +21,8 @@ class PeopleCounter(Resource):
 
 class PeopleCounter2(Resource):
     def get(self):
-        img_url = request.args.get('img_url')   # http://127.0.0.1:5000/?img_url=https://adres_zdjecia
+        img_url = request.args.get('img_url')
+        # http://127.0.0.1:5000/?img_url=https://adres_zdjecia
         resp = urlopen(img_url)
         img2 = np.asarray(bytearray(resp.read()), dtype="uint8")
         img2 = cv2.imdecode(img2, cv2.IMREAD_COLOR)
