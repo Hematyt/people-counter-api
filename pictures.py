@@ -9,18 +9,20 @@ api = Api(app)
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 
-'''img = cv2.imread('images/droga.jpg')
-cv2.imshow('image', img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()'''  #pokazuje zdjecie
+#img = cv2.imread('images/droga.jpg')
+#cv2.imshow('image', img)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()pokazuje zdjecie
+
 
 class PeopleCounter(Resource):
     def get(selfself):
         img = cv2.imread('images/droga.jpg')
-        boxes, weights = hog.detectMultiScale(img, winStride = (2,2))
+        boxes, weights = hog.detectMultiScale(img, winStride=(2,2))
         print(type(img))
         print(img.shape)
         return {'count': len(boxes)}
+
 
 class HelloWorld(Resource):
     def get(self):
