@@ -1,7 +1,7 @@
 import cv2
-import numpy as np
 from flask import Flask
 from flask_restful import Resource, Api
+from flask import request
 
 app = Flask(__name__)
 api = Api(app)
@@ -18,7 +18,7 @@ hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 class PeopleCounter(Resource):
     def get(selfself):
         img = cv2.imread('images/droga.jpg')
-        boxes, weights = hog.detectMultiScale(img, winStride=(2,2))
+        boxes, weights = hog.detectMultiScale(img, winStride=(8,8))
         print(type(img))
         print(img.shape)
         return {'count': len(boxes)}
