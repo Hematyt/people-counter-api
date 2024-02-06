@@ -4,7 +4,6 @@ from flask_restful import Api, Resource
 from urllib.request import urlopen
 import numpy as np
 import os
-from flask.views import MethodView
 
 app = Flask(__name__, template_folder='templates')
 api = Api(app)
@@ -19,7 +18,7 @@ def count_people(image_path):
     return len(boxes)
 
 
-class PeopleCounter1(MethodView):
+class PeopleCounter1(Resource):
     def get(self):
         try:
             file_path = 'images/droga.jpg'
@@ -29,7 +28,7 @@ class PeopleCounter1(MethodView):
             return jsonify({"error": str(e)})
 
 
-class PeopleCounter2(MethodView):
+class PeopleCounter2(Resource):
     def get(self):
         try:
             img_url = request.args.get('img_url')
