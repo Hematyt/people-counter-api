@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Counting people</title>
+    <title>Counter app</title>
 </head>
 <body>
     <h1>Counting people in a picture</h1>
+    <h3>Upload image</h3>
     <form action="/upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file" accept=".jpg, .jpeg, .png">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h3>Use picture from folder images</h3>
+    <form action="/1" method="get" enctype="multipart/form-data">
         <button type="submit">Submit</button>
     </form>
 </body>
