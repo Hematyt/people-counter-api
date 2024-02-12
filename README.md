@@ -7,5 +7,5 @@ there are 3 endpoints. 2 are available from home page:
 
 To use last endpoint (with url) write:
 http://127.0.0.1:5000/2/?img_url=adres_zdjecia
-but change 'adres_zdjecia' to your url 
+! Remeber to change 'adres_zdjecia' to your url !
 
